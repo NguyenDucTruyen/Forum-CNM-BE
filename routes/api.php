@@ -111,7 +111,7 @@ Route::get('/getListPendingBlog',[BlogController::class,'listPendingBlog'])->mid
 Route::post('/create-checkout-session', [StripeController::class, 'createCheckoutSession']);
 Route::get('/checkout-session', [StripeController::class, 'getSessionDetails']);
 #get all user
-//->middleware(['role:admin'])
+
 Route::get('/getAll', [UserController::class, 'getAll'])->middleware(['auth:api', 'role:admin']);
 #category
 Route::post('/createCategory',[CategoryController::class,'createCategory'])->middleware(['auth:api', 'role:admin']);
